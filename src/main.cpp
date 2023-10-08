@@ -16,6 +16,18 @@
 
 using namespace std;
 
+/* 一些全局变量 */
+string sequence;    //原始序列
+
+//LTR存在范围，默认范围为100~6000
+int minLenLTR = 10;
+int maxLenLTR = 20;
+
+unordered_map<string,struct node>hashtable; 
+//key ：string ; value: int(index and distance)?
+map<int,struct node2> index_map_distance;
+//字典，记录更新hash过程中的distance和index对应的值
+
 int main(int argc,char **argv)
 {
     //打开文件
@@ -43,7 +55,10 @@ int main(int argc,char **argv)
     for(int i = 0; i < v1.size(); i++){
         sequence = sequence + v1.at(i);
     }
-    cout<<sequence.size()<<endl;
+    //cout<<sequence<<endl;
+    for(int i = 0; i < sequence.size(); i++){
+        cout<<'('<<sequence[i]<<','<<i<<')';
+    }
     seq_score();
     Get_value();//test
     infile.close();

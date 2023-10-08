@@ -11,7 +11,6 @@ void Get_value();
 
 
 
-
 /*
 string get_k_mer(int i,int k);
 int k_mer_4to10(string k_mer);

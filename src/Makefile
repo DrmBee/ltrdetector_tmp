@@ -1,18 +1,18 @@
 CXX= g++
 CXXFLAGS = -Wall -O3 -ffast-math -Ilib/ -std=c++11 -DNDEBUG
-
+.PHONY : clean
 #
 # Objects
 #
-Omain = ../bin/main.o
-Oscore = ../bin/score.o
+Omain = ..\bin\main.o
+Oscore = ..\bin\score.o
 
 OBJS = $(Omain) $(Oscore) 
 
 #
 # Targets
 #
-TLTRDetector = ../bin/ltrdetector
+TLTRDetector = ..\bin\ltrdetector.exe
 
 #
 # Make LTRDetector
@@ -34,4 +34,4 @@ $(Oscore): main.h score.h
 #
 
 clean:
-	rm -f $(OBJS) $(TLTRDetector)
+	del $(TLTRDetector) $(OBJS)
